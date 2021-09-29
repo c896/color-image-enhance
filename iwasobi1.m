@@ -1,4 +1,4 @@
-function [Wwasobi, Winit, ISR,signals]= iwasobi1(x,Xmean,AR_order,rmax,eps0)
+function iwasobi1(x,Xmean,AR_order,rmax,eps0)
 %
 % implements algorithm WASOBI for blind source separation of
 % AR sources in a fast way, allowing separation up to 100 sources
@@ -34,7 +34,7 @@ if nargin<4 %3
 end  
 num_of_iterations = 3;
 [d N]=size(x);
-% Xmean=mean(x,2); 此处为本人修改
+% Xmean=mean(x,2); 麓脣麓娄脦陋卤戮脠脣脨脼赂脛
 x=x-Xmean*ones(1,N);  %%%%%%%%%  removing the sample mean
 T=length(x(1,:))-AR_order;
 C0=corr_est(x,T,AR_order);
